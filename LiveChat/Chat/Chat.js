@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, Dimensions, Platform } from 'react-native';
+import { StyleSheet, Text, Dimensions, Platform, KeyboardAvoidingView } from 'react-native';
 import { init } from '@livechat/livechat-visitor-sdk';
 import { View } from 'react-native-animatable';
 import PropTypes from 'prop-types';
@@ -149,6 +149,7 @@ export default class Chat extends React.Component {
             user={this.getVisitor()}
             {...this.props}
           />
+          {Platform.OS === 'android' ? <KeyboardAvoidingView behavior='padding' keyboardVerticalOffset={22} /> : null}
         </View>
       );
     }
