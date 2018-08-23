@@ -1,3 +1,3 @@
 import LiveChat from './LiveChat/LiveChat';
-
-export default LiveChat;
+import Chat from './LiveChat/Chat/Chat';
+export {LiveChat, Chat};
