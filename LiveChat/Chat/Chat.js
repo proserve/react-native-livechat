@@ -113,7 +113,7 @@ export default class Chat extends React.Component {
   };
 
   closeChat = () => {
-    this.props.closeChat();
+      this.props.closeChat();
   };
 
   renderFooter = () => {
@@ -133,7 +133,7 @@ export default class Chat extends React.Component {
     if (this.props.isChatOn) {
       return (
         <View
-          // animation="lightSpeedIn"
+          animation="lightSpeedIn"
           style={styles.container}
           ref={(ref) => { this.chat = ref; }}
         >
@@ -149,7 +149,7 @@ export default class Chat extends React.Component {
             user={this.getVisitor()}
             {...this.props}
           />
-          {Platform.OS === 'android' ? <KeyboardAvoidingView behavior='padding' keyboardVerticalOffset={22} /> : null}
+          <KeyboardAvoidingView behavior={'padding'} keyboardVerticalOffset={30}/>
         </View>
       );
     }
@@ -174,8 +174,8 @@ const styles = StyleSheet.create({
   },
   container: {
     width,
-    height: Platform.OS === 'ios' ? height : height - height / 25,
-    // position: ,
+    height: (Platform.OS === 'ios' ? height : height - height / 25),
+    position: 'absolute',
     flexDirection: 'column',
     backgroundColor: '#fff',
   },
